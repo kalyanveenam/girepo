@@ -2,7 +2,7 @@ const exp = require('express');
 const path = require('path')
 const repo = require('./utils/getRepoData')
 const app = exp()
-
+const port = process.env.PORT || 3002
 const publicPath = path.join(__dirname, '/../public');
 console.log('view->' + publicPath);
 //app.use(exp.static(publicPath))
@@ -40,6 +40,6 @@ app.get('/getRepo', (req, res) => {
     //  });
 
 })
-app.listen('3002', () => {
+app.listen(port, () => {
     console.log('listening to port')
 }) 
